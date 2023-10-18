@@ -220,6 +220,11 @@ void creat_tab1()
 	sel_style.body.grad_color = sel_style.body.main_color;
 	sel_style.text.color = LV_COLOR_WHITE; // 文本为白色
 
+	// 文本
+	lv_obj_t *seach_label = lv_label_create(tab1_page, NULL);
+	lv_label_set_text(seach_label, "Seach"); // 设置"Login"标题
+	lv_obj_align(seach_label, NULL, LV_ALIGN_IN_TOP_LEFT, 36, 170);	
+
 	// 创建输入框
 	ta1 = lv_ta_create(tab1_page, NULL);
 	lv_obj_set_size(ta1, 300, 30);							// 设置大小
@@ -241,9 +246,8 @@ void creat_tab1()
 	/* --------------- table -----------*/
 	// 文本
 	lv_obj_t *book_label = lv_label_create(tab1_page, NULL);
-	lv_label_set_recolor(book_label, true);									   // 使能文本重绘色功能
-	lv_label_set_text(book_label, "#ff0000 The# #0000ff Book# #00ff00 List#"); // 设置"Login"标题
-	lv_obj_align(book_label, NULL, LV_ALIGN_IN_TOP_LEFT, 0, 420);	
+	lv_label_set_text(book_label, "Book List"); // 设置"Login"标题
+	lv_obj_align(book_label, NULL, LV_ALIGN_IN_TOP_LEFT, 33, 420);	
 
 	// 创建表格
 	lv_obj_t *table = lv_table_create(tab1_page, NULL);
