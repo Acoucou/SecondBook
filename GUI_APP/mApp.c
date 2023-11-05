@@ -237,7 +237,7 @@ void creat_tab1()
 	// 确认按钮
 	btn1 = lv_btn_create(tab1_page, NULL);
 	// lv_obj_set_pos(btn1, 50, 300);
-	lv_obj_set_size(btn1, 60, 40);							 // 设置大小
+	lv_obj_set_size(btn1, 70, 40);							 // 设置大小
 	lv_obj_align(btn1, NULL, LV_ALIGN_IN_TOP_MID, 150, 200); // 设置对齐方式
 	lv_obj_t *btn_label = lv_label_create(btn1, NULL);
 	lv_label_set_text(btn_label, "ok");		  // 设置按钮上的标题

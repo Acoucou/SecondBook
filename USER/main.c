@@ -22,10 +22,9 @@ SemaphoreHandle_t BinarySemaphore; // 二值信号量句柄
 
 void test()
 {
-	delay_ms(500);
-	setVolume(0x13);
-	delay_ms(500);
-	setVolume(0x13);
+	// Uart_SendCMD(0x0C, 0, 0);
+	// delay_ms(500);
+	// setVolume(0x13);
 }
 
 void Start_task(void *pvParameters)
