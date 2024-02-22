@@ -201,3 +201,4 @@
 ..\obj\include.o: ..\HARDWARE\USART3\usart3.h
 ..\obj\include.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\include.o: ..\HARDWARE\MSG\msg.h
+..\obj\include.o: ..\HARDWARE\RC522\rc522.h

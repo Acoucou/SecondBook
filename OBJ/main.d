@@ -201,6 +201,7 @@
 ..\obj\main.o: ..\HARDWARE\USART3\usart3.h
 ..\obj\main.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\main.o: ..\HARDWARE\MSG\msg.h
+..\obj\main.o: ..\HARDWARE\RC522\rc522.h
 ..\obj\main.o: ..\FreeRTOS\include\FreeRTOS.h
 ..\obj\main.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 ..\obj\main.o: ..\FreeRTOS\include\projdefs.h

@@ -21,26 +21,64 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
-E:\all_project\智慧二书园\毕设\book_project\USER\template.uvprojx
-Project File Date:  06/17/2023
+E:\all_project\智慧二书园\毕设\book_project_2024_01_17\USER\template.uvprojx
+Project File Date:  02/20/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'TEMPLATE'
-compiling mApp.c...
-..\GUI_APP\mApp.c(44): warning:  #1295-D: Deprecated declaration creat_tab1 - give arg types
-  void creat_tab1();
-..\GUI_APP\mApp.c(45): warning:  #1295-D: Deprecated declaration creat_tab2 - give arg types
-  void creat_tab2();
-..\GUI_APP\mApp.c(46): warning:  #1295-D: Deprecated declaration lv_example_table_1 - give arg types
-  void lv_example_table_1();
-..\GUI_APP\mApp.c(302): warning:  #177-D: variable "btn_id"  was declared but never referenced
-  	uint16_t btn_id = 10;
-..\GUI_APP\mApp.c: 4 warnings, 0 errors
+compiling main.c...
+main.c(65): warning:  #223-D: function "checkBookAddress" declared implicitly
+  			bookIndex = checkBookAddress(BOOK);
+main.c(69): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  				addBook(BOOK, bookid, bookIndex);
+main.c(77): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			bookIndex = findId(BOOK, bookid); // 查找位置bookChack[i].index
+main.c(87): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			bookIndex = findId(BOOK, bookid); // 查找位置BOOK[i].index
+main.c(97): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			bookIndex = findId(BOOK, bookid); // 查找位置BOOK[i].index
+main.c(110): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  				addBook(BOOK, bookid, bookIndex);
+main.c(118): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			bookIndex = findId(BOOK, bookid); // 查找位置bookChack[i].index
+main.c(161): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  		if (strlen(esp8266_buf) != 0 && strstr(esp8266_buf, "book") != NULL) // 小程序消息处理
+main.c(161): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  		if (strlen(esp8266_buf) != 0 && strstr(esp8266_buf, "book") != NULL) // 小程序消息处理
+main.c(167): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			fingString(dataPtr, "cmd", "\"", cmd);		 // 获得命令
+main.c(167): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			fingString(dataPtr, "cmd", "\"", cmd);		 // 获得命令
+main.c(168): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			fingString(dataPtr, "bookId", "\"", bookid); // 获得书籍id
+main.c(168): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			fingString(dataPtr, "bookId", "\"", bookid); // 获得书籍id
+main.c(170): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  			if (strcmp(cmd, "pushbook") == 0) // 通过小程序控制，放置书籍指令
+main.c(175): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  			else if (strcmp(cmd, "removebook") == 0) // 取出书籍指令
+main.c(180): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  			else if (strcmp(cmd, "prebook") == 0) // 取出书籍指令
+main.c(185): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  			else if (strcmp(cmd, "returnbook") == 0) // 归还书籍指令
+main.c(213): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			sendAck("book", bookid, 1); // 添加成功，发送反馈
+main.c(233): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  			sendAck("book", bookid, 0); // 发送消息
+main.c(259): warning:  #177-D: variable "xHigherPriorityTaskWoken"  was declared but never referenced
+  	BaseType_t xHigherPriorityTaskWoken;
+main.c(465): warning:  #177-D: variable "snr"  was declared but never referenced
+  	unsigned char snr, buf[16], TagType[2], SelectedSnr[4], DefaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; 
+main.c(465): warning:  #177-D: variable "buf"  was declared but never referenced
+  	unsigned char snr, buf[16], TagType[2], SelectedSnr[4], DefaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; 
+main.c(465): warning:  #177-D: variable "DefaultKey"  was declared but never referenced
+  	unsigned char snr, buf[16], TagType[2], SelectedSnr[4], DefaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; 
+main.c: 23 warnings, 0 errors
 linking...
-Program Size: Code=135952 RO-data=151728 RW-data=1312 ZI-data=817512  
+Program Size: Code=137808 RO-data=151728 RW-data=1316 ZI-data=817508  
 FromELF: creating hex file...
-"..\OBJ\template.axf" - 0 Error(s), 4 Warning(s).
+"..\OBJ\template.axf" - 0 Error(s), 23 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -53,7 +91,7 @@ Package Vendor: Keil
   F:/Keil_v5/ARM/PACK/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

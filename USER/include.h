@@ -23,6 +23,8 @@
 #include "stdlib.h"
 #include "checkBook.h"
 
+#include "rc522.h"
+
 void hardware_init(void);
 
 

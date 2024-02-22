@@ -12,7 +12,7 @@ unsigned int i;
 u8 data[100];
 unsigned int music_count = 0;
 u8 led_flag = 1, msg_flag = 0;
-unsigned int preview_flag = null;
+unsigned int preview_flag = null, getbook_flag = null;
 extern lv_obj_t *error_btn;
 
 // 任务句柄
@@ -25,6 +25,7 @@ void test()
 	// Uart_SendCMD(0x0C, 0, 0);
 	// delay_ms(500);
 	// setVolume(0x13);
+	setVolume(0x03);
 }
 
 void Start_task(void *pvParameters)
@@ -40,13 +41,14 @@ void Start_task(void *pvParameters)
 	xTaskCreate((TaskFunction_t)GetBook_task, (const char *)"task4_task", (uint16_t)128, (void *)NULL, (UBaseType_t)5, (TaskHandle_t *)&GetBook_Handler);
 	xTaskCreate((TaskFunction_t)PreviewBook_task, (const char *)"task4_task", (uint16_t)128, (void *)NULL, (UBaseType_t)6, (TaskHandle_t *)&PreviewBook_Handler);
 	xTaskCreate((TaskFunction_t)Error_task, (const char *)"task5_task", (uint16_t)1024, (void *)NULL, (UBaseType_t)7, (TaskHandle_t *)&Error_handler);
-	xTaskCreate((TaskFunction_t)Other_task, (const char *)"task6_task", (uint16_t)128, (void *)NULL, (UBaseType_t)8, (TaskHandle_t *)&Other_Handler);
+	xTaskCreate((TaskFunction_t)Other_task, (const char *)"task6_task", (uint16_t)128, (void *)NULL, (UBaseType_t)3, (TaskHandle_t *)&Other_Handler);
 	xTaskCreate((TaskFunction_t)Tip_task, (const char *)"task7_task", (uint16_t)128, (void *)NULL, (UBaseType_t)9, (TaskHandle_t *)&Tip_Handler);
 
 	// 挂起
 	vTaskSuspend(PushBook_Handler);
 	vTaskSuspend(GetBook_Handler);
 	vTaskSuspend(PreviewBook_Handler);
+	
 
 	vTaskDelete(StartTask_Handler); // 删除开始任务
 	taskEXIT_CRITICAL(); // 退出临界区
@@ -288,7 +290,6 @@ void Error_task(void *pvParameters)
 	BaseType_t xHigherPriorityTaskWoken;
 	while (1)
 	{
-		
 		if (fun == null && error_index == null && error_index1 == null)
 		{
 			for (i = 0; i < bookNum; i++)
@@ -328,28 +329,23 @@ void Error_task(void *pvParameters)
 			{
 				lv_event_send(error_btn, LV_EVENT_RELEASED, NULL);
 				preview_flag = 2;
-				printf("-----send event\r\n");
 			}
 
-			if (preview_flag == 1)  // 预览书籍
+			if (preview_flag == 1)  // 预览书籍 | 取出书籍
 			{
-				printf("----1111111\r\n");
 				// BOOK[i].previewFlag = error_index;
 				sendAck("book", BOOK[error_index].bookId, 0); // 发送消息
 
 				//  清除书籍信息
 				removeBook(BOOK, error_index);
 
-
 				musicIndex = 10;
 				preview_flag = null;
 				error_index = null;
 				xSemaphoreGiveFromISR(BinarySemaphore, &xHigherPriorityTaskWoken); // 释放二值信号量，发出提示
-
 			}
 			else if(preview_flag == 0)  // 放回书籍
 			{
-				printf("----2222222\r\n");
 				bookIndex = error_index;
 				musicIndex = 1;
 				preview_flag = null;
@@ -368,7 +364,6 @@ void Error_task(void *pvParameters)
 				BOOK[error_index1].flag = 0;
 				error_index1 = null;
 
-				printf("----3333333\r\n");
 				// 播放声音，关灯
 				bookIndex = null;
 				musicIndex = 9;
@@ -463,13 +458,36 @@ void Tip_task(void *pvParameters)
 	}
 }
 
+// 刷卡任务
 void Other_task(void *pvParameters)
 {
-	setVolume(0x03);
+	char status;
+	unsigned char TagType[2], SelectedSnr[4]; 
+
 	while (1)
 	{
+		status= PcdRequest(REQ_ALL,TagType);
+		if(status == MI_OK)
+		{
+			status = PcdAnticoll(SelectedSnr);
+			if(status == MI_OK)
+			{
+				printf("card\r\n");
 
-		vTaskDelay(1);
+				if(getbook_flag != null)
+				{
+					getbook_flag = null;
+					preview_flag = 1;
+
+					BEEP = ~BEEP;
+					vTaskDelay(100);
+					BEEP = ~BEEP;
+
+					WaitCardOff();
+				}
+			}
+		}
+		vTaskDelay(100);
 	}
 }
 

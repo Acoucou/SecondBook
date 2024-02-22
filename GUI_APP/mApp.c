@@ -15,7 +15,7 @@ extern unsigned int musicIndex;
 
 extern char *bookid;
 int fun = null;
-extern unsigned int preview_flag;
+extern unsigned int preview_flag, getbook_flag;
 
 lv_style_t bg_style;
 lv_style_t indic_style;
@@ -97,7 +97,7 @@ void error_mbox_create(lv_obj_t *parent)
 {
 	error_mbox = lv_mbox_create(parent, NULL);
 	lv_obj_set_size(error_mbox, lv_obj_get_width(parent) * 0.7f, lv_obj_get_height(parent) / 2);
-	lv_mbox_set_text(error_mbox, "ERROR\n ARE YOU PREVIEW BOOK?");
+	lv_mbox_set_text(error_mbox, "WELCOME\n ARE YOU GET THIS BOOK?");
 	lv_mbox_add_btns(error_mbox, (const char **)MBOX_MAP);
 	lv_obj_set_drag(error_mbox, true); // 设置对话框可以被拖拽
 	lv_obj_align(error_mbox, NULL, LV_ALIGN_CENTER, 0, 0);
@@ -423,7 +423,7 @@ void error_handler(lv_obj_t *obj, lv_event_t event)
 			btn_id = lv_mbox_get_active_btn(obj);
 			if (btn_id == 0) // Apply 按钮
 			{
-				preview_flag = 1;
+				getbook_flag = 1;
 				lv_obj_del(error_mbox); // 关闭对话框
 				error_mbox = NULL;
 			}
