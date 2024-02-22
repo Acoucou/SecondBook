@@ -1,0 +1,56 @@
+<!--admin.wxml-->
+<view class="contain">
+
+    <!-- <navigator class="setting" url="../sellingBook/sellingBook">
+        <view>
+            <view class="fun1">
+                订单管理
+            </view>
+            <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+        </view>
+    </navigator>
+
+    <navigator open-type="switchTab" class="setting" url="../stores/stores">
+        <view>
+            <view class="fun1">
+                预览详情
+            </view>
+            <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+        </view>
+    </navigator>
+
+    <navigator class="setting" url="../donateBook/donateBook">
+        <view>
+            <view class="fun1">
+                捐书详情
+            </view>
+            <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+        </view>
+    </navigator>
+
+    <navigator class="setting" url="../donateBook/donateBook">
+        <view>
+            <view class="fun1">
+                添加管理员
+            </view>
+            <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+        </view>
+    </navigator> -->
+
+</view>
+
+
+
+<!-- <view class="books_contain">
+    <view class="book" wx:for="{{BOOK}}" wx:key="bookId">
+        <image src="{{item.bookPic[0]}}" style="width: 320rpx; border-radius: 30rpx;"></image>
+        <view class="msg">
+            <view class="book_name">{{item.bookName}}</view>
+            <view class="price">{{item.bookPrice}}</view>
+            <view>￥</view>
+        </view>
+        <view>书籍ID:{{item.bookId}}</view>
+
+        <button bindtap="ack" data-index="{{index}}" style="background-color: wheat;width: 200rpx; border-radius: 30rpx; top: 20rpx;">通过</button>
+        </view>
+</view> -->

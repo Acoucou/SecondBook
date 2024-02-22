@@ -1,0 +1,28 @@
+/**index.wxss**/
+.contain{
+    padding-top: 20rpx;
+}
+
+.index_swiper swiper {
+    width: 750rpx;
+    height: 340rpx;
+}
+
+.index_swiper swiper image {
+    width: 100%;
+}
+
+.setting{
+    height: 120rpx;
+    width: 92%;
+    margin-left: 4%;
+    margin-top: 80rpx;
+    background-color: white;
+    border-radius: 40rpx;
+}
+
+.fun1{
+    float: left;
+    padding-top: 35rpx;
+    padding-left: 50rpx;
+}

@@ -1,0 +1,59 @@
+<!--pages/user/user.wxml-->
+<view class="contain">
+    <view class="hand">
+        <image mode="widthFix" src="../../image/my_pic.jpg" style="width: 160rpx; margin-left: 10%; margin-top: 20rpx; border-radius: 50%;"></image>
+        <view class="text">
+            <view class="name">
+                coucou
+            </view>
+            <view class="id">
+                学号：201110326
+            </view>
+        </view>
+    </view>
+
+    <navigator class="setting" url="../booklist/booklist">
+    <view>
+        <view class="fun1">
+            我的书单
+        </view>
+        <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+    </navigator>
+
+    <navigator class="setting" url="../rank/rank">
+    <view>
+        <view class="fun1">
+            捐书排行版
+        </view>
+        <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+    </navigator>
+
+    <view class="setting">
+    <view>
+        <view class="fun1">
+            浏览记录
+        </view>
+        <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+    </view>
+
+    <view class="setting">
+    <view>
+        <view class="fun1">
+           关于我们
+        </view>
+        <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+    </view>
+
+    <navigator class="setting" url="../admin/admin">
+    <view>
+        <view class="fun1">
+            管理员登录
+        </view>
+        <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+    </navigator>
+</view>

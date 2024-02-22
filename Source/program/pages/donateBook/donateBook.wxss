@@ -1,0 +1,52 @@
+/* pages/sellingBook/sellingBook.wxss */
+.tab{
+    margin-top: 50rpx;
+    margin-left: 30rpx;
+}
+
+.bookName{
+    margin-top: 30rpx;
+    margin-left: 10rpx;
+}
+
+/* 图片样式 */
+.weui-uploader {
+    margin-top: 16rpx;
+}
+
+.tp_add {
+    width: 152rpx;
+    height: 152rpx;
+    border-radius: 10rpx;
+    opacity: 1;
+    border: 2rpx dashed #999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 59rpx;
+}
+
+.pics {
+    float: left;
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.pics image {
+    width: 152rpx;
+    height: 152rpx;
+}
+
+.delete-btn {
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    top: -15rpx;
+    right: -5rpx;
+}
+
+.weui-uploader {
+    padding: 10rpx;
+}
+

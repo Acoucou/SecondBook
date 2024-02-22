@@ -1,0 +1,67 @@
+/* pages/stores/stores.wxss */
+.search{
+    display: flex;
+    padding-top: 20rpx;
+}
+
+.screen-box {
+    width: 100%;
+    display: fixed;
+    height: 30px;
+    margin-top: 20rpx;
+    padding-top: 10rpx;
+    vertical-align: middle;
+    background: rgb(252, 252, 252);
+    border-radius: 30rpx;
+}
+
+.screen {
+    width: 23%;
+    margin: 0 1%;
+    float: left;
+    /*background: #f7f7f7;*/
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.screen-box .active {
+    color: red;
+}
+
+.screen-box .active::after {
+    border: 5px solid transparent;
+    border-top: 5px solid red;
+    width: 0;
+    height: 0;
+    position: absolute;
+    margin-left: 6px;
+    margin-top: 10px;
+    content: '';
+}
+
+.books_contain{
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10rpx;
+}
+
+.book{
+    padding-left: 35rpx;
+    padding-top: 30rpx;
+    border-radius: 30rpx;
+}
+
+.msg{
+    display: flex;
+    justify-content: center;   
+}
+.book_name{
+    margin-left: 20rpx;
+}
+.price{
+    margin-left: 20rpx;
+}

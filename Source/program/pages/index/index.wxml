@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="contain">
+  <view class="index_swiper">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item>
+        <navigator>
+          <image mode="widthFix" src="../../image/13.jpg"></image>
+        </navigator>
+      </swiper-item>
+      <swiper-item>
+        <navigator>
+          <image mode="widthFix" src="../../image/13.jpg"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <navigator class="setting" url="../sellingBook/sellingBook">
+    <view>
+      <view class="fun1">
+        我要卖书
+      </view>
+      <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+  </navigator>
+
+  <navigator open-type="switchTab" class="setting" url="../stores/stores">
+    <view>
+      <view class="fun1">
+        我要买书
+      </view>
+      <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+  </navigator>
+
+  <navigator class="setting" url="../donateBook/donateBook">
+    <view>
+      <view class="fun1">
+        我要捐书
+      </view>
+      <image mode="widthFix" src="../../icons/right.jpg" style="float: right; width: 50rpx; padding-top: 28rpx; padding-right: 30rpx;"></image>
+    </view>
+  </navigator>
+
+
+</view>

@@ -1,0 +1,67 @@
+<!--pages/sellingBook/sellingBook.wxml-->
+<view class="contain" style="padding-bottom: 30rpx;">
+    <view class="tab">
+        <view class="bookName">
+            请填写书名
+        </view>
+        <input bindinput="setBookName" type="text" style="width: 92%; height: 60rpx; margin-left: 2%; margin-top: 10rpx; background-color: white; border-radius: 10rpx;" />
+    </view>
+
+    <view class="tab">
+        <view class="bookName">
+            请填写您想要出手的价格
+        </view>
+
+        <input bindinput="setBookPrice" type="text" auto-focus style="width: 92%; height: 60rpx; margin-left: 2%; margin-top: 10rpx; background-color: white; border-radius: 10rpx;" />
+    </view>
+
+    <view class="tab">
+        <view class="bookName">
+            请填写书籍类别
+        </view>
+            <view class="section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+        <view style="margin-left: 285rpx;">
+        {{array[index]}}
+        </view>
+    </view>
+        
+    </picker>
+</view>
+        <!-- <input bindinput="setBookCart" type="text" 	placeholder="教科类/ 文学读物/ 小说读物" style="width: 92%; height: 60rpx; margin-left: 2%; margin-top: 10rpx; background-color: white; border-radius: 10rpx;" /> -->
+    </view>
+
+    <view class="tab">
+        <view class="bookName">
+            请填写书籍描述
+        </view>
+
+        <textarea bindinput="setBookDetail" type="text" style="width: 92%; height: 200rpx; margin-left: 2%; margin-top: 10rpx; background-color: white; border-radius: 10rpx; position: relative; left: -5rpx; top: 0rpx" />
+    </view>
+
+    <view class="img">
+        <view class="set_img" style="margin-top: 30rpx; margin-left: 40rpx;">
+            请选择图片
+        
+            
+        </view>
+
+        <view class="weui-uploader" style="margin-left: 30rpx;">
+            <view class='pics' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                <image class='weui-uploader__img' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                    <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+                </image>
+            </view>
+
+            <view class="tp_cont {{tj_ycang?'':'hide'}}" bindtap="chooseImg">
+                <view class="tp_add">+</view>
+            </view>
+        </view>
+
+    </view>
+
+</view>
+<button bindtap="sure" style="width: 300rpx; background-color: wheat; top: 50rpx;">
+        确定
+</button>

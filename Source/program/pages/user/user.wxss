@@ -1,0 +1,21 @@
+/* pages/user/user.wxss */
+.text{
+    float: right;
+    padding-right: 30%;
+    padding-top: 6%;
+}
+
+.setting{
+    height: 120rpx;
+    width: 92%;
+    margin-left: 4%;
+    margin-top: 50rpx;
+    background-color: white;
+    border-radius: 40rpx;
+}
+
+.fun1{
+    float: left;
+    padding-top: 35rpx;
+    padding-left: 50rpx;
+}

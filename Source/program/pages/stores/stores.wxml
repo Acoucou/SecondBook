@@ -1,0 +1,30 @@
+<!--pages/stores/stores.wxml-->
+<view class="contain">
+    <view class="search">
+
+        <input bindinput="setName" type="text" placeholder="昆虫记" style="width: 82%; height: 60rpx; margin-left: 4%; margin-top: 10rpx; background-color: rgb(252, 252, 252); border-radius: 30rpx;" />
+        <image mode="widthFix" src="../../icons/search.jpg" style="position: absolute; width: 50rpx; margin-left: 77%; margin-top: 16rpx; border-radius: 30rpx;"></image>
+        <image mode="widthFix" src="../../icons/show.jpg" style="position: absolute; width: 60rpx; margin-left: 88%; margin-top: 16rpx; border-radius: 30rpx;"></image>
+    </view>
+
+    <view class="screen-box">
+        <view class="screen {{activeNum==1?'active':''}}" id="screen1" bindtap="changeTab" data-id="1">最新</view>
+        <view class="screen {{activeNum==2?'active':''}}" id="scanner2" bindtap="changeTab" data-id="2">教科类</view>
+        <view class="screen {{activeNum==3?'active':''}}" id="scanner3" bindtap="changeTab" data-id="3">文学类</view>
+        <view class="screen {{activeNum==4?'active':''}}" id="scanner4" bindtap="changeTab" data-id="4">小说类</view>
+    </view>
+
+    <view class="books_contain">
+        <view class="book" wx:for="{{BOOK}}" wx:for-item="item" wx:key="bookId">
+            <navigator wx:if="{{item.bookAck == 1}}" url="../detail/detail?index={{index}}">
+                <image src="{{item.bookPic[0]}}" style="width: 320rpx; border-radius: 30rpx;"></image>
+                <view class="msg">
+                    <view class="book_name">{{item.bookName}}</view>
+                    <view class="price">{{item.bookPrice}}</view>
+                    <view>￥</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+</view>

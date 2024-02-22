@@ -1,0 +1,55 @@
+<view class="detail_swiper">
+    <swiper autoplay circular indicator-dots>
+        <swiper-item bindtap="handlePrevewImage" wx:for="{{BOOK[index].bookPic}}" >
+            <image mode="widthFix" src="{{item}}"></image>
+        </swiper-item>
+        <!-- <swiper-item bindtap="handlePrevewImage">
+            <image mode="widthFix" src="../../image/1.jpg"></image>
+        </swiper-item>
+        <swiper-item bindtap="handlePrevewImage">
+            <image mode="widthFix" src="../../image/1.jpg"></image>
+        </swiper-item> -->
+    </swiper>
+</view>
+
+<view class="goods_price">￥{{BOOK[index].bookPrice}}</view>
+<view class="goods_name_row">
+    <view class="goods_name">{{BOOK[index].bookName}}</view>
+    <view class="goods_collect" bindtap="handleCollect">
+        <view class="collect_text">收藏</view>
+    </view>
+</view>
+
+<view class="goods_info">
+    <view class="goods_info_title">书籍描述</view>
+    <view class="goods_info_content">
+        <rich-text nodes="{{BOOK[index].bookDetail}}"></rich-text>
+    </view>
+</view>
+
+<view class="btm_tool">
+    <view class="tool_item">
+        <view>联系</view>
+        <view>卖家</view>
+        <button open-type="contact"></button>
+    </view>
+    <!-- <view class="tool_item">
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view> -->
+    <view class="tool_item" bindtap="ReturnBook">
+        归还
+    </view>
+    <view class="tool_item btn_look" bindtap="LookingBook">
+        预览
+    </view>
+        <!-- <navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
+        <view>书单</view> -->
+    <!-- </navigator> -->
+    <view class="tool_item btn_cart " bindtap="handleCartAdd">
+        加入书单
+    </view>
+    <view class="tool_item btn_buy" bindtap="buyingBook">
+        立即购买
+    </view>
+</view>

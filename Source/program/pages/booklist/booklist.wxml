@@ -1,0 +1,56 @@
+<!-- <view class="contain">
+    <view style="padding-top: 10rpx; padding-left: 42%;">
+        我买的书
+    </view>
+    <view class="setting">
+        <view>
+            <view class="fun1">
+                我的书单
+            </view>
+            <button style="height: 80rpx; width: 200rpx; top: 15rpx; left: 140rpx; background-color: white;">
+                确认
+            </button>
+        </view>
+    </view>
+</view> -->
+
+<view class="screen-box">
+    <view style="right: 100rpx;">
+        <view class="screen {{activeNum==1?'active':''}}" id="screen1" bindtap="changeTab" data-id="1">我买的书</view>
+    </view>
+    <view style="right: 100%;">
+        <view class="screen {{activeNum==2?'active':''}}" id="scanner2" bindtap="changeTab" data-id="2">我预览的书</view>
+    </view>
+</view>
+
+<!-- 已买 -->
+<view wx:if="{{activeNum == 1}}">
+    <view class="books_contain">
+        <view class="book" wx:for="{{BOOK}}" wx:for-item="item" wx:key="bookId">
+            <navigator wx:if="{{item.bookAck == 1}}" url="../detail/detail?index={{index}}">
+                <image src="{{item.bookPic[0]}}" style="width: 320rpx; border-radius: 30rpx;"></image>
+                <view class="msg">
+                    <view class="book_name">{{item.bookName}}</view>
+                    <view class="price">{{item.bookPrice}}</view>
+                    <view>￥</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+<!-- 已预览 -->
+<view wx:if="{{activeNum == 2}}">
+    <view class="books_contain">
+        <view class="book" wx:for="{{BOOK}}" wx:for-item="item" wx:key="bookId">
+            <navigator wx:if="{{item.bookAck == 2}}" url="../detail/detail?index={{index}}">
+                <image src="{{item.bookPic[0]}}" style="width: 320rpx; border-radius: 30rpx;"></image>
+                <view class="msg">
+                    <view class="book_name">{{item.bookName}}</view>
+                    <view class="price">{{item.bookPrice}}</view>
+                    <view>$</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

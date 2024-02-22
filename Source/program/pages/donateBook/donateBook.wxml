@@ -1,0 +1,33 @@
+<!--pages/sellingBook/sellingBook.wxml-->
+<view class="contain" style="padding-bottom: 30rpx;">
+    <view class="tab">
+        <view class="bookName">
+            请填写书籍描述
+        </view>
+
+        <textarea bindinput="setBookDetail" type="text" style="width: 92%; height: 200rpx; margin-left: 2%; margin-top: 10rpx; background-color: white; border-radius: 10rpx;" />
+    </view>
+
+    <view class="img">
+        <view class="set_img" style="margin-top: 30rpx; margin-left: 40rpx;">
+            请选择图片
+        </view>
+
+        <view class="weui-uploader" style="margin-left: 30rpx;">
+            <view class='pics' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                <image class='weui-uploader__img' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                    <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+                </image>
+            </view>
+
+            <view class="tp_cont {{tj_ycang?'':'hide'}}" bindtap="chooseImg">
+                <view class="tp_add">+</view>
+            </view>
+        </view>
+
+    </view>
+
+</view>
+<button bindtap="sure" style="width: 300rpx; background-color: wheat; top: 50rpx;">
+        确定
+    </button>

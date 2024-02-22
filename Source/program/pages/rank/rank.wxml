@@ -1,0 +1,2 @@
+<!--pages/rank/rank.wxml-->
+<image mode="widthFix" src="../../image/rank.jpg" style="float: right; width: 100%; padding-top: 28rpx; height: 100%;"></image>

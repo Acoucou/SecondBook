@@ -1,0 +1,3 @@
+<view class="contain">
+    <image mode="widthFix" src="../../icons/massage.jpg" style="width: 300rpx; margin-left: 30%; margin-top: 40%;"></image>
+</view>

@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/stores/stores",
+    "pages/massage/massage",
+    "pages/user/user",
+    "pages/sellingBook/sellingBook",
+    "pages/donateBook/donateBook",
+    "pages/rank/rank",
+    "pages/detail/detail",
+    "pages/admin/admin",
+    "pages/trade/trade",
+    "pages/booklist/booklist",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#eeeeee",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+    
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-o.png"
+      },
+      {
+        "pagePath": "pages/stores/stores",
+        "text": "书城",
+        "iconPath": "icons/category.png",
+        "selectedIconPath": "icons/category-o.png"
+      },
+      {
+        "pagePath": "pages/massage/massage",
+        "text": "消息",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cart-o.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-o.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
